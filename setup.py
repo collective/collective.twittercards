@@ -38,14 +38,18 @@ setup(name='collective.twittercards',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools'
+          'setuptools',
+          'five.grok',
+          'plone.directives.form',
           # -*- Extra requirements: -*-
       ],
       extras_require={
           'test': [
               'plone.api',
               'plone.app.testing[robot]>=4.2.2',
-              'plone.testing'
+              'plone.testing',
+
+
           ]
       },
       entry_points="""
