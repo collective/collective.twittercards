@@ -7,8 +7,6 @@ grok.templatedir('.')
 class TestViewlet(grok.Viewlet):
     grok.context(IContentish)
     grok.viewletmanager(IHtmlHead)
-    grok.template('testviewlet.pt')
-    # grok.layer(IInternetLayer)
     #
     # @property
     # def settings(self):
