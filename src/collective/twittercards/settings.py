@@ -1,36 +1,64 @@
 from Products.CMFCore.interfaces import ISiteRoot
 from five import grok
-from plone.app.controlpanel.widgets import MultiCheckBoxThreeColumnWidget
 from plone.app.registry.browser.controlpanel import RegistryEditForm, \
     ControlPanelFormWrapper
 from plone.directives import form
 from plone.z3cform import layout
+from z3c.form import field
 from zope.interface import Interface
-from zope.schema import Bool, Tuple, Choice, TextLine, List
+from zope import schema
+from collective.z3cform.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield.registry import DictRow
 
 from collective.twittercards import TwittercardsMessageFactory as _
+from collective.twittercards.vocabulary import twittercards_vocabulary
+
+
+class ITwittercardsTypeSettings(Interface):
+    allowed_types = schema.Choice(
+        title=_("label_allowed_types",
+                default="Portal types"),
+        description=_("Activate types for twittercards"),
+        vocabulary="plone.app.vocabularies.ReallyUserFriendlyTypes",
+        required=False
+    )
+    type_twittercard = schema.Choice(
+        title=_("label_type_twittercard",
+                default="Type of Twittercard"),
+        description=_(""),
+        vocabulary=twittercards_vocabulary,
+        required=False
+    )
 
 
 class ITwittercardsSettings(form.Schema):
-    """TEMP"""
-
-    activate_twittercards_tags = Bool(
+    activate_twittercards_tags = schema.Bool(
         title=_("label_activate_twittercards_tags",
-                default='Activate Twittercards meta tags'),
+                default="Activate Twittercards meta tags"),
         description=_("description_activate_twittercards_tags",
-                      default='Controls if Twittercards are exposed to page'
-                              ' header.'),
+                      default="Controls if Twittercards are exposed to page"
+                              " header."),
         default=True,
         required=False
     )
 
-    allowed_types = Tuple(
-        title=_(u'Portal types'),
-        description=_(u'Portal types lead image may be attached to.'),
-        value_type=Choice(
-            vocabulary="plone.app.vocabularies.ReallyUserFriendlyTypes"),
+    selected_types = schema.List(
+        title=_("label_selected_types",
+                default="Selected twittercard types"),
+        value_type=DictRow(title=_("label_selected_types_row",
+                                   default="type"),
+                           schema=ITwittercardsTypeSettings)
+    )
+
+    twitter_user = schema.TextLine(
+        title=_("label_twitter_user", default=_("Twitter username")),
+        description=_("description_twitter_user",
+                      default=_("The Twitter @username the card should be "
+                                "attributed to. Required for Twitter Card "
+                                "analytics.")),
         required=False
     )
+
 
 class TwittercardsSettingsForm(RegistryEditForm):
     schema = ITwittercardsSettings
@@ -39,12 +67,16 @@ class TwittercardsSettingsForm(RegistryEditForm):
     description = _("twittercards_configlet_description",
                     default="You can select what content types are "
                             "Twittercards-enabled")
+    fields = field.Fields(ITwittercardsSettings)
+    fields['selected_types'].widgetFactory = DataGridFieldFactory
 
 
 class TwittercardsSettingsView(grok.View):
-    grok.name('twittercards-settings')
+    grok.name("twittercards-settings")
     grok.context(ISiteRoot)
-    grok.require('cmf.ManagePortal')
+    grok.require("cmf.ManagePortal")
+
+
 
     def render(self):
         view_factor = layout.wrap_form(TwittercardsSettingsForm,

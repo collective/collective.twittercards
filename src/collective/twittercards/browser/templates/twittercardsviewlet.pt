@@ -1,0 +1,15 @@
+<tal:twittercard tal:condition="viewlet/available">
+    <meta name="twitter:card" content="summary"
+            tal:attributes="content viewlet/type_twittercard"/>
+    <meta name="twitter:site" content="@flickr"
+            tal:condition="viewlet/twitter_user"
+            tal:attributes="content viewlet/twitter_user"/>
+    <meta name="twitter:title"
+          content="Small Island Developing States Photo Submission"
+            tal:attributes="content viewlet/title"/>
+    <meta name="twitter:description" content="View the album on Flickr."
+            tal:attributes="content viewlet/description"/>
+    <meta name="twitter:url"
+          content="https://www.flickr.com/photos/unicphoto/sets/72157645001703785/"
+            tal:attributes="content python: viewlet.context.absolute_url()"/>
+</tal:twittercard>

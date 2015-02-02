@@ -39,6 +39,7 @@ setup(name='collective.twittercards',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'collective.z3cform.datagridfield',
           'five.grok',
           'plone.directives.form',
           # -*- Extra requirements: -*-
