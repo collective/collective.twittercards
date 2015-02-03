@@ -3,7 +3,9 @@ from five import grok
 from plone.app.layout.viewlets.interfaces import IHtmlHead
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
+
 from collective.twittercards.settings import ITwittercardsSettings
+
 
 grok.templatedir('templates')
 
@@ -22,7 +24,9 @@ class TwittercardsViewlet(grok.Viewlet):
 
     @property
     def image(self):
-        return None  # TODO: add image
+        if not hasattr(self.context, 'image'):
+            return None
+        return None
 
     @property
     def settings(self):
@@ -39,11 +43,12 @@ class TwittercardsViewlet(grok.Viewlet):
 
     def available(self):
         settings = self.settings
-        context_type = self.context.Type()
-        if not settings.selected_types:
+        portal_type = self.context.portal_type
+        if not settings.selected_types or \
+                not settings.activate_twittercards_tags:
             return False
         for selected_type in settings.selected_types:
-            if context_type in selected_type['allowed_types']:
+            if portal_type in selected_type['allowed_types']:
                 self.type_twittercard = selected_type['type_twittercard']
                 return True
         return False

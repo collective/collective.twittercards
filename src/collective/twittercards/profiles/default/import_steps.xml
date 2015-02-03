@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="twittercards_uninstall" version="20081125-01"
+              handler="collective.twittercards.setuphandlers.install"
+              title="Twittercards installation">
+  Twittercards installation
+ </import-step>
+</import-steps>

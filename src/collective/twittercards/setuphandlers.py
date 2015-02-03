@@ -1,9 +1,19 @@
 import logging
 
 from Products.CMFCore.utils import getToolByName
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
+from collective.twittercards.settings import ITwittercardsSettings
 
 
 logger = logging.getLogger('collective.twittercards')
+
+DEFAULTS = [
+    {'allowed_types': 'Document', 'type_twittercard': 'summary'},
+    {'allowed_types': 'Folder', 'type_twittercard': 'summary'},
+    {'allowed_types': 'Image', 'type_twittercard': 'photo'},
+    {'allowed_types': 'News Item', 'type_twittercard': 'summary_large_image'}
+]
 
 
 def remove_configlet(site):
@@ -12,6 +22,21 @@ def remove_configlet(site):
     if controlpanel_tool:
         controlpanel_tool.unregisterConfiglet(conf_id)
         logger.log(logging.INFO, "Unregistered \"%s\" controlpanel." % conf_id)
+
+
+def setup_settings(site):
+    """"""
+    registry = getUtility(IRegistry)
+    settings = registry.forInterface(ITwittercardsSettings)
+    if not settings.selected_types:
+        settings.selected_types = DEFAULTS
+
+
+def install(context):
+    if context.readDataFile('twittercards_install.txt') is None:
+        return
+    site = context.getSite()
+    setup_settings(site)
 
 
 def uninstall(context):
