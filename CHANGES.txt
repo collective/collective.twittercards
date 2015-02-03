@@ -1,8 +1,17 @@
 Changelog
 =========
-
-0.1-dev (unreleased)
+0.1.2 (2015-02-03)
 --------------------
 
-- Package created using templer
-  []
+- Documentation added.
+
+0.1.1 (2015-02-02)
+--------------------
+
+- Added twitter viewlet and various settings to be able to select what type of
+  card should be used for a certain content type.
+
+0.1 (2015-01-30)
+--------------------
+
+- Initial release.

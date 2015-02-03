@@ -1,0 +1,9 @@
+include CHANGES.txt
+include CONTRIBUTORS.txt
+include README.rst
+recursive-include src *.zcml, *.pot, *.po, *.css, *.js, *.xml, *.txt, *.cpt, *.pt, *.metadata, *.zpt, *.sh
+recursive-include src/collective/twittercards/browser/templates *
+recursive-include src/collective/twittercards/profiles/default *
+recursive-include src/collective/twittercards/profiles/uninstall *
+include src/collective/twittercards/configure.zcml
+include src/collective/twittercards/profiles.zcml
