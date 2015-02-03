@@ -40,6 +40,8 @@ class TwittercardsViewlet(grok.Viewlet):
     def available(self):
         settings = self.settings
         context_type = self.context.Type()
+        if not settings.selected_types:
+            return False
         for selected_type in settings.selected_types:
             if context_type in selected_type['allowed_types']:
                 self.type_twittercard = selected_type['type_twittercard']
