@@ -49,8 +49,6 @@ setup(name='collective.twittercards',
               'plone.api',
               'plone.app.testing[robot]>=4.2.2',
               'plone.testing',
-
-
           ]
       },
       entry_points="""
