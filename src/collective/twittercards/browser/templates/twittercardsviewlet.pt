@@ -1,15 +1,17 @@
 <tal:twittercard tal:condition="viewlet/available">
     <meta name="twitter:card" content="summary"
             tal:attributes="content viewlet/type_twittercard"/>
-    <meta name="twitter:site" content="@flickr"
+    <meta name="twitter:site" content="@username"
             tal:condition="viewlet/twitter_user"
             tal:attributes="content viewlet/twitter_user"/>
-    <meta name="twitter:title"
-          content="Small Island Developing States Photo Submission"
+    <meta name="twitter:title" content="Title"
             tal:attributes="content viewlet/title"/>
-    <meta name="twitter:description" content="View the album on Flickr."
-            tal:attributes="content viewlet/description"/>
-    <meta name="twitter:url"
-          content="https://www.flickr.com/photos/unicphoto/sets/72157645001703785/"
+    <meta name="twitter:description" content="Description"
+            tal:attributes="content viewlet/description"
+            tal:condition="viewlet/description"/>
+    <meta name="twitter:url" content="http://example.com"
             tal:attributes="content python: viewlet.context.absolute_url()"/>
+    <meta name="twitter:image" content="http://image.url"
+            tal:condition="viewlet/image" tal:attributes="content viewlet/image"
+            />
 </tal:twittercard>

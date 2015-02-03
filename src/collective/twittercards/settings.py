@@ -76,8 +76,6 @@ class TwittercardsSettingsView(grok.View):
     grok.context(ISiteRoot)
     grok.require("cmf.ManagePortal")
 
-
-
     def render(self):
         view_factor = layout.wrap_form(TwittercardsSettingsForm,
                                        ControlPanelFormWrapper)

@@ -15,6 +15,16 @@ class TwittercardsViewlet(grok.Viewlet):
     type_twittercard = ''
 
     @property
+    def description(self):
+        if self.type_twittercard == 'photo':
+            return None
+        return self.context.Description  # TODO: add correct call of description
+
+    @property
+    def image(self):
+        return None  # TODO: add image
+
+    @property
     def settings(self):
         registry = getUtility(IRegistry)
         return registry.forInterface(ITwittercardsSettings)
@@ -26,10 +36,6 @@ class TwittercardsViewlet(grok.Viewlet):
     @property
     def title(self):
         return self.context.pretty_title_or_id()
-
-    @property
-    def description(self):
-        return self.context.Description
 
     def available(self):
         settings = self.settings
