@@ -10,6 +10,8 @@ Prerequiresites
 Supported card types
 ================================================
 - Summary Card
+- Summary Large Image Card
+- Photo Card
 
 Roadmap
 ================================================

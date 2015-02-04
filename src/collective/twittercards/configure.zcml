@@ -5,6 +5,7 @@
            i18n_domain="collective.twittercards">
 
     <include package="plone.app.registry" />
+    <include package="five.grok" />
 
     <five:registerPackage package="." initialize=".initialize"/>
     <includeDependencies package="."/>
