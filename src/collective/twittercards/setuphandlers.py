@@ -3,16 +3,21 @@ import logging
 from Products.CMFCore.utils import getToolByName
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
+
 from collective.twittercards.settings import ITwittercardsSettings
 
 
 logger = logging.getLogger('collective.twittercards')
 
 DEFAULTS = [
-    {'allowed_types': 'Document', 'type_twittercard': 'summary'},
-    {'allowed_types': 'Folder', 'type_twittercard': 'summary'},
-    {'allowed_types': 'Image', 'type_twittercard': 'photo'},
-    {'allowed_types': 'News Item', 'type_twittercard': 'summary_large_image'}
+    {'allowed_types': 'Document', 'type_twittercard': 'summary',
+     'image_field_name': u''},
+    {'allowed_types': 'Folder', 'type_twittercard': 'summary',
+     'image_field_name': u''},
+    {'allowed_types': 'Image', 'type_twittercard': 'photo',
+     'image_field_name': u''},
+    {'allowed_types': 'News Item', 'type_twittercard': 'summary_large_image',
+     'image_field_name': u'image'}
 ]
 
 

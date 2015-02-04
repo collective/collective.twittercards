@@ -30,6 +30,12 @@ class ITwittercardsTypeSettings(Interface):
         required=False
     )
 
+    image_field_name = schema.TextLine(
+        title=_("label_image_field_name",
+                default="Image Field Name"),
+        required=False
+    )
+
 
 class ITwittercardsSettings(form.Schema):
     activate_twittercards_tags = schema.Bool(
