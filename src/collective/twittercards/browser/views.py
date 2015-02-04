@@ -1,4 +1,3 @@
-from five import grok
 from zope.interface import Interface
 
 
@@ -6,11 +5,11 @@ class ITwittercardsContextProperties(Interface):
     pass
 
 
-class TwittercardsContextPropertiesView(grok.View):
+class TwittercardsContextPropertiesView(object):
     pass
 
 
-class TwittercardsAvailableView(grok.View):
+class TwittercardsAvailableView(object):
     """
     Class to represent if the twittercards are available on the current type.
     """
