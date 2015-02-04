@@ -24,7 +24,7 @@ class TwittercardsViewlet(grok.Viewlet):
         """
         if self.context_settings['type_twittercard'] == 'photo':
             return None
-        return self.context.getattr('Description', None)
+        return getattr(self.context, 'Description', '')
 
     @property
     def image_field_name(self):
