@@ -4,7 +4,7 @@ Extensions Package
 :mod:`Install` Module
 ---------------------
 
-.. automodule:: twittercards.Extensions.Install
+.. automodule:: collective.twittercards.Extensions.Install
     :members:
     :undoc-members:
     :show-inheritance:

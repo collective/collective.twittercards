@@ -4,7 +4,7 @@ twittercards Package
 :mod:`twittercards` Package
 ---------------------------
 
-.. automodule:: twittercards.__init__
+.. automodule:: collective.twittercards
     :members:
     :undoc-members:
     :show-inheritance:
@@ -12,7 +12,7 @@ twittercards Package
 :mod:`config` Module
 --------------------
 
-.. automodule:: twittercards.config
+.. automodule:: collective.twittercards.config
     :members:
     :undoc-members:
     :show-inheritance:
@@ -20,7 +20,7 @@ twittercards Package
 :mod:`interfaces` Module
 ------------------------
 
-.. automodule:: twittercards.interfaces
+.. automodule:: collective.twittercards.interfaces
     :members:
     :undoc-members:
     :show-inheritance:
@@ -28,7 +28,7 @@ twittercards Package
 :mod:`settings` Module
 ----------------------
 
-.. automodule:: twittercards.settings
+.. automodule:: collective.twittercards.settings
     :members:
     :undoc-members:
     :show-inheritance:
@@ -36,7 +36,7 @@ twittercards Package
 :mod:`setuphandlers` Module
 ---------------------------
 
-.. automodule:: twittercards.setuphandlers
+.. automodule:: collective.twittercards.setuphandlers
     :members:
     :undoc-members:
     :show-inheritance:
@@ -44,7 +44,7 @@ twittercards Package
 :mod:`testing` Module
 ---------------------
 
-.. automodule:: twittercards.testing
+.. automodule:: collective.twittercards.testing
     :members:
     :undoc-members:
     :show-inheritance:
@@ -52,7 +52,7 @@ twittercards Package
 :mod:`vocabulary` Module
 ------------------------
 
-.. automodule:: twittercards.vocabulary
+.. automodule:: collective.twittercards.vocabulary
     :members:
     :undoc-members:
     :show-inheritance:
@@ -62,7 +62,7 @@ Subpackages
 
 .. toctree::
 
-    twittercards.Extensions
-    twittercards.browser
-    twittercards.tests
+    collective.twittercards.Extensions
+    collective.twittercards.browser
+    collective.twittercards.tests
 

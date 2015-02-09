@@ -4,7 +4,7 @@ browser Package
 :mod:`settings` Module
 ----------------------
 
-.. automodule:: twittercards.browser.settings
+.. automodule:: collective.twittercards.browser.settings
     :members:
     :undoc-members:
     :show-inheritance:
@@ -12,7 +12,7 @@ browser Package
 :mod:`viewlets` Module
 ----------------------
 
-.. automodule:: twittercards.browser.viewlets
+.. automodule:: collective.twittercards.browser.viewlets
     :members:
     :undoc-members:
     :show-inheritance:
@@ -20,7 +20,7 @@ browser Package
 :mod:`views` Module
 -------------------
 
-.. automodule:: twittercards.browser.views
+.. automodule:: collective.twittercards.browser.views
     :members:
     :undoc-members:
     :show-inheritance:
