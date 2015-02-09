@@ -10,6 +10,8 @@ Prerequiresites
 Supported card types
 ================================================
 - Summary Card
+- Summary Large Image Card
+- Photo Card
 
 Roadmap
 ================================================
@@ -41,3 +43,19 @@ http://your-plone-site.com/@@twittercards-settings
 
 .. image:: _static/01_control_panel.png
     :align: center
+
+Documentation
+===============================================
+Contents:
+
+.. toctree::
+   :maxdepth: 20
+
+   collective.twittercards
+
+Indices and tables
+===============================================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
