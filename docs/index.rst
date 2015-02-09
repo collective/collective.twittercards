@@ -51,7 +51,7 @@ Contents:
 .. toctree::
    :maxdepth: 20
 
-   twittercards
+   collective.twittercards
 
 Indices and tables
 ===============================================
