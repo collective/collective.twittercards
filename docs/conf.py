@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # collective.twittercards documentation build configuration file, created by
-# sphinx-quickstart on Wed Jan 9 16:56:20 2014.
+# sphinx-quickstart on Wed Feb 5 16:01:43 2015.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
